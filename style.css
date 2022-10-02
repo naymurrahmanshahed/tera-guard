@@ -679,3 +679,74 @@ h4 {
   visibility: hidden;
   opacity: 0;
 }
+
+/********************************************************Footer*****************************************************/
+
+.footer {
+  padding: 10rem 3rem;
+  background-color: #37383d;
+}
+
+.footer__nav {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5rem;
+}
+
+.footer__item {
+  margin-right: 4rem;
+}
+
+.footer__link {
+  font-size: 1.6rem;
+  color: #eee;
+  text-decoration: none;
+}
+
+.footer__logo {
+  height: 5rem;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 5rem;
+}
+
+.footer__copyright {
+  font-size: 1.4rem;
+  color: #aaa;
+  text-align: center;
+}
+
+/* cookie message */
+
+.cookie {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 99;
+  background-color: #37383d;
+  width: 100%;
+  height: 12rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: 1.6rem;
+  box-shadow: 0 -1 1rem rgba(0, 0, 0, 0.1);
+  transition: all 1s;
+  animation: revealCookie 1.5s 1;
+}
+
+.cookie p {
+  color: #eee;
+}
+
+@keyframes revealCookie {
+  from {
+    bottom: -12rem;
+    opacity: 0;
+  }
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
+}
