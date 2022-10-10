@@ -79,8 +79,21 @@ navLinks.addEventListener("click", () => {
   document.querySelector("html").style.overflow = "visible";
 });
 
-// reveal section
+// modal
+function openModal() {
+  modal.classList.remove("hidden");
+  overlay.classList.remove("hidden");
+}
 
+function closeModal() {
+  modal.classList.add("hidden");
+  overlay.classList.add("hidden");
+}
+
+btnsOpenModal.forEach((btn) => btn.addEventListener("click", openModal));
+btnCloseModal.addEventListener("click", closeModal);
+overlay.addEventListener("click", closeModal);
+// reveal section
 function revealSection(entries, observer) {
   const entry = entries[0];
   if (!entry.isIntersecting) return;
