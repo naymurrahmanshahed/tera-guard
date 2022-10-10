@@ -752,3 +752,146 @@ h4 {
 }
 
 /* media query */
+@media screen and (max-width: 1024px) {
+  .nav__item {
+    margin-left: 0;
+  }
+
+  .nav__links li a {
+    font-size: 2.5rem !important;
+  }
+
+  .nav__links {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .nav__links.nav__open {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    z-index: 200;
+    justify-content: center;
+    gap: 3rem;
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.3s;
+  }
+
+  .nav__toggle {
+    display: block;
+    width: 3.5rem;
+    height: 3.5rem;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all 0.3s;
+    z-index: 201;
+  }
+
+  .nav__toggle:hover {
+    color: #24cbc8;
+  }
+
+  .header__title {
+    max-width: 115rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10rem;
+    place-items: center;
+    text-align: center;
+  }
+
+  .header__right {
+    width: 75vw;
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+  }
+
+  .features__feature {
+    width: 100%;
+  }
+
+  .features__feature:nth-child(3) {
+    grid-row: 4;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .cookie {
+    flex-direction: column;
+    height: 25rem;
+  }
+
+  .slider {
+    height: 70rem;
+  }
+
+  .slide {
+    height: 70rem;
+  }
+
+  .footer__nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer__item {
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 612px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media screen and (max-width: 545px) {
+  .nav__item:nth-child(3) {
+    display: none;
+  }
+
+  .header__title h1 {
+    font-size: 4rem;
+  }
+
+  .section__header {
+    font-size: 3rem;
+  }
+
+  .cookie {
+    padding: 2rem;
+  }
+
+  .features {
+    margin: 0 1rem;
+  }
+
+  #section--2 {
+    display: none;
+  }
+
+  .slider {
+    height: 90rem;
+  }
+
+  .slide {
+    height: 90rem;
+  }
+
+  .modal {
+    max-width: 50rem;
+    background-color: #f3f3f3;
+    padding: 6rem 2rem;
+  }
+}

@@ -62,6 +62,23 @@ navLinks.addEventListener("click", (e) => {
   }
 });
 
+// Nav Toggler
+navToggle.addEventListener("click", () => {
+  if (navLinks.classList.contains("nav__open")) {
+    navLinks.classList.remove("nav__open");
+    document.querySelector("html").style.overflow = "visible";
+  } else {
+    navLinks.classList.add("nav__open");
+    document.querySelector("html").style.overflow = "hidden";
+  }
+});
+
+navLinks.addEventListener("click", () => {
+  navLinks.classList.contains("nav__open") &&
+    navLinks.classList.remove("nav__open");
+  document.querySelector("html").style.overflow = "visible";
+});
+
 // reveal section
 
 function revealSection(entries, observer) {
