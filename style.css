@@ -267,7 +267,7 @@ h4 {
 
 .section--hidden {
   opacity: 0;
-  transform: translateY(10rem);
+  transform: translateY(15rem);
 }
 
 .section__title {
@@ -750,3 +750,5 @@ h4 {
     opacity: 1;
   }
 }
+
+/* media query */
