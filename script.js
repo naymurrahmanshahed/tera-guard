@@ -151,3 +151,64 @@ tabsContainer.addEventListener("click", (e) => {
     .querySelector(`.operations__content--${btn.dataset.tab}`)
     .classList.add("operations__content--active");
 });
+
+// testimonial section
+let currentSlide = 0;
+const maxSlide = slides.length - 1;
+
+// dots
+function makingDots() {
+  slides.forEach((_, i) => {
+    const dot = `<button class = 'dots__dot' data-slide = ${i}> </button>`;
+    dotContainer.insertAdjacentHTML("beforeend", dot);
+  });
+}
+makingDots();
+// active dots
+
+function activeDots(slide) {
+  document
+    .querySelectorAll(".dots__dot")
+    .forEach((dot) => dot.classList.remove("dots__dot--active"));
+  document
+    .querySelector(`.dots__dot[data-slide='${slide}']`)
+    .classList.add("dots__dot--active");
+}
+
+activeDots(0);
+function changeSlide(cs) {
+  slides.forEach((sl, i) => {
+    sl.style.transform = `translateX(${100 * (i - cs)}%)`;
+  });
+}
+changeSlide(0);
+
+function prevSlide() {
+  if (currentSlide === 0) {
+    currentSlide = maxSlide;
+  } else currentSlide--;
+
+  changeSlide(currentSlide);
+  activeDots(currentSlide);
+}
+
+function nextSlide() {
+  if (currentSlide === maxSlide) {
+    currentSlide = 0;
+  } else currentSlide++;
+  changeSlide(currentSlide);
+  activeDots(currentSlide);
+}
+
+// handler
+btnLeft.addEventListener("click", prevSlide);
+btnRight.addEventListener("click", nextSlide);
+
+//dot handler
+
+dotContainer.addEventListener("click", (e) => {
+  if (e.target.classList.contains("dots__dot")) {
+    activeDots(e.target.dataset.slide);
+    changeSlide(e.target.dataset.slide);
+  }
+});
