@@ -62,6 +62,13 @@ navLinks.addEventListener("click", (e) => {
   }
 });
 
+// Learn more scroll
+btnScrollTo.addEventListener("click", function () {
+  section1.scrollIntoView({
+    behavior: "smooth",
+  });
+});
+
 // Nav Toggler
 navToggle.addEventListener("click", () => {
   if (navLinks.classList.contains("nav__open")) {
@@ -204,6 +211,11 @@ function nextSlide() {
 btnLeft.addEventListener("click", prevSlide);
 btnRight.addEventListener("click", nextSlide);
 
+document.addEventListener("keydown", (e) => {
+  e.key === "ArrowLeft" && prevSlide();
+  e.key === "ArrowRight" && nextSlide();
+});
+
 //dot handler
 
 dotContainer.addEventListener("click", (e) => {
@@ -211,4 +223,12 @@ dotContainer.addEventListener("click", (e) => {
     activeDots(e.target.dataset.slide);
     changeSlide(e.target.dataset.slide);
   }
+});
+
+// cookie
+
+cookieCloseBtn.addEventListener("click", () => {
+  cookieBody.classList.add("hidden");
+
+  cookieBody.style.bottom = "-12rem";
 });
